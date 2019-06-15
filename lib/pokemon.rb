@@ -1,5 +1,5 @@
 class Pokemon
-  attr_accessor :name, :type
+  attr_accessor :name, :type, :hp
   attr_reader :id, :db
 
 
@@ -8,6 +8,7 @@ class Pokemon
     @name = name
     @type = type
     @db = db
+    @hp = hp
   end
 
   def self.save(name, type, db, hp)
