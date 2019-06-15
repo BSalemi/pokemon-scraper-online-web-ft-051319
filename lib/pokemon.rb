@@ -28,7 +28,7 @@ class Pokemon
     name = pokemon[0][1]
     type = pokemon[0][2]
     new_pokemon = Pokemon.new(id, name, type, db)
-    binding.pry
+    # binding.pry
     new_pokemon
   end
 end
