@@ -13,9 +13,9 @@ class Pokemon
 
   def self.save(name, type, db, hp)
     sql = <<-SQL
-    INSERT INTO pokemon(name, type) VALUES(?,?)
+    INSERT INTO pokemon(name, type, hp) VALUES(?,?,?)
     SQL
-    db.execute(sql, name, type, hp )
+    db.execute(sql, name, type, hp)
     @id = db.execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
   end
 
@@ -29,7 +29,7 @@ class Pokemon
     name = pokemon[0][1]
     type = pokemon[0][2]
     hp = pokemon[0][3]
-    new_pokemon = Pokemon.new(id: id, name: name, type: type, db: db)
+    new_pokemon = Pokemon.new(id: id, name: name, type: type, db: db, hp: hp)
     binding.pry
     new_pokemon
   end
