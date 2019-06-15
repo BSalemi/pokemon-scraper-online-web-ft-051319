@@ -11,7 +11,7 @@ class Pokemon
     @hp = hp
   end
 
-  def self.save(name, type, db, hp)
+  def self.save(name, type, db)
     sql = <<-SQL
     INSERT INTO pokemon(name, type) VALUES(?,?)
     SQL
