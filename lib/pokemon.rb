@@ -15,7 +15,7 @@ class Pokemon
     sql = <<-SQL
     INSERT INTO pokemon(name, type) VALUES(?,?)
     SQL
-    db.execute(sql, name, type)
+    db.execute(sql, name, type, hp )
     @id = db.execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
   end
 
@@ -28,8 +28,9 @@ class Pokemon
     id = pokemon[0][0]
     name = pokemon[0][1]
     type = pokemon[0][2]
-    new_pokemon = Pokemon.new(id: id, name: name, type: type, db: db)
-    # binding.pry
+    hp = pokemon[0][3]
+    new_pokemon = Pokemon.new(id: id, name: name, type: type, db: db, hp:)
+    binding.pry
     new_pokemon
   end
 end
