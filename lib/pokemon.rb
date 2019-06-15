@@ -3,14 +3,14 @@ class Pokemon
   attr_reader :id, :db
 
 
-  def initialize(id:, name:, type:, db:)
+  def initialize(id:, name:, type:, db:, hp = 60)
     @id = id
     @name = name
     @type = type
     @db = db
   end
 
-  def self.save(name, type, db)
+  def self.save(name, type, db, hp)
     sql = <<-SQL
     INSERT INTO pokemon(name, type) VALUES(?,?)
     SQL
