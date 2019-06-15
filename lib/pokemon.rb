@@ -35,11 +35,11 @@ class Pokemon
     new_pokemon
   end
 
-  def alter_hp(new_hp)
+  def alter_hp(id, new_hp)
     sql = <<-SQL
       UPDATE pokemon SET hp = ? WHERE id = ?
     SQL
-    db.execute(sql, new_hp, self.id)
+    db.execute(sql, new_hp, id)
   end
 
 end
