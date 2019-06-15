@@ -39,7 +39,7 @@ class Pokemon
     sql = <<-SQL
       UPDATE pokemon SET hp = ? WHERE hp = ?
     SQL
-    db.execute(sql, new_hp, self.hp)
+    db.execute(sql, new_hp, hp)
   end
 
 end
