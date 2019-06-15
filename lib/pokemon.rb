@@ -32,7 +32,14 @@ class Pokemon
     type = pokemon[0][2]
     hp = pokemon[0][3]
     new_pokemon = Pokemon.new(id: id, name: name, type: type, db: db, hp: hp)
-
     new_pokemon
   end
+
+  def alter_hp(new_hp)
+    sql = <<-SQL
+      UPDATE pokemon SET hp = ?
+    SQL
+    db.execute(sql, new_hp)
+  end
+
 end
