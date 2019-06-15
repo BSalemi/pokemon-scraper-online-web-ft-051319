@@ -3,7 +3,7 @@ class Pokemon
   attr_reader :id, :db
 
 
-  def initialize(id:, name:, type:, db:, hp: = 60)
+  def initialize(id:, name:, type:, db:, hp:)
     @id = id
     @name = name
     @type = type
@@ -29,7 +29,7 @@ class Pokemon
     name = pokemon[0][1]
     type = pokemon[0][2]
     hp = pokemon[0][3]
-    new_pokemon = Pokemon.new(id: id, name: name, type: type, db: db, hp:)
+    new_pokemon = Pokemon.new(id: id, name: name, type: type, db: db, hp: hp)
     binding.pry
     new_pokemon
   end
